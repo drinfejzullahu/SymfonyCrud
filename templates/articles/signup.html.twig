@@ -3,7 +3,7 @@
 {% block title %} Sign Up {% endblock %}
 
 {% block body %}
-
+    {% include("articles/header.html.twig") %}
     {{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}

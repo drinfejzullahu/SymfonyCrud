@@ -1,11 +1,9 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+    {% include("articles/header.html.twig") %}
 
-    {% for user in users %}
 
-        <li>{{ user.name}}</li>
 
-    {% endfor %}
 
 {% endblock %}

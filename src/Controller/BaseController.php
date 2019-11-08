@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+ use App\Entity\Perdoruesi;
  use App\Entity\User;
  use phpDocumentor\Reflection\Types\This;
  use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -26,7 +27,9 @@ namespace App\Controller;
      */
     public function index()
     {
-        return $this->render("articles/index.html.twig");
+        $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+
+        return $this->render("articles/index.html.twig" ,array("users"=>$users) );
     }
 
     /**
@@ -53,6 +56,7 @@ namespace App\Controller;
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
+
             $user = $form->getData();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
@@ -65,6 +69,13 @@ namespace App\Controller;
             'form'=>$form->createView()
         ));
     }
+
+
+
+
+
+
+
 
 
      /**
@@ -102,8 +113,13 @@ namespace App\Controller;
             if(!$user1){
                 return new Response("<h1>Wrong</h1>");
             }
+
+            else if($user1->isAdmin() == true){
+               return $this->render('articles/admin.html.twig',array("users"=>$this->getUsers()));
+            }
             else{
-                return $this->redirectToRoute('index_page');
+                return $this->render('articles/afterlogin.html.twig',array("user"=>$user1));
+
             }
         }
 
@@ -123,5 +139,40 @@ namespace App\Controller;
 
     public function getUsers(){
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+        return $users;
     }
+
+     /**
+      * @Route("/edit/{id}" ,name = "edit")
+      * @Method({"GET","POST"})
+      */
+
+     public function edit(Request $request,$id){
+
+         $user = new User();
+         $user = $this->getDoctrine()->getRepository(User::class)->find($id);
+
+         $form = $this->createFormBuilder($user)
+             ->add("name",TextType::class,array('attr'=>array('class'=>'form-control')))
+             ->add('lastname',TextType::class,array('attr'=>array('class'=>'form-control')))
+             ->add('email',EmailType::class,array(  'attr'=>array( 'type' => 'email', 'class'=>'form-control')))
+             ->add('password',PasswordType::class,array(  'attr'=>array( 'type' =>'password', 'class'=>'form-control')))
+             ->add('edit',SubmitType::class,array('label'=>'Edit','attr'=>array('class'=>'btn btn-primary mt-3')))
+             ->getForm();
+
+         $form->handleRequest($request);
+         if($form->isSubmitted() && $form->isValid()){
+
+             $entityManager = $this->getDoctrine()->getManager();
+             $entityManager->flush();
+
+             return $this->redirectToRoute('index_page');
+         }
+
+         return $this->render('articles/edit.html.twig',array(
+             'form'=>$form->createView()
+         ));
+     }
+
+
 }
