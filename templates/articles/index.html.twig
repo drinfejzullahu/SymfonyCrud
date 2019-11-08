@@ -2,8 +2,10 @@
 
 {% block body %}
 
-    <div class="container-fluid">
-        ...
-    </div>
+    {% for user in users %}
+
+        <li>{{ user.name}}</li>
+
+    {% endfor %}
 
 {% endblock %}
