@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcacec96-7de3-468d-b629-8bebf0f149b0" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/templates/articles/admin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/articles/header2.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/afterlogin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/afterlogin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/signup.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/signup.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+>>>>>>> update-profile
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,10 +26,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="Git.Settings">
@@ -141,7 +157,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -175,7 +192,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573127369002</updated>
-      <workItem from="1573127370179" duration="13761000" />
+      <workItem from="1573127370179" duration="13766000" />
+      <workItem from="1573200412206" duration="15543000" />
     </task>
     <servers />
   </component>
